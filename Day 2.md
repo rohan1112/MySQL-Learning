@@ -164,7 +164,7 @@ located in San Jose.
 
 ## 25. Find all customers located in cities WHERE Serres (SNUM 1002) has customers.
 
-    SELECT * FROM customers WHERE snum=1002;
+     select * from customers where city in(select c.city from customers c,salespeople s where s.snum=c.snum and c.snum=1002);
 
 ## 26. SELECT all customers with a rating above 200.00.
 
