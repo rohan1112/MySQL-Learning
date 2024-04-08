@@ -126,7 +126,7 @@
 
 ## 80. Write a query on the Customers table that will find the highest rating in each city. Put the output in this form : for the city (city) the highest rating is : (rating).
 
-    SELECT city,MAX(rating) rating FROM customers GROUP BY city  ;
+     SELECT concat("For the city ",city," highest rating is ",MAX(rating)) as "City with max Rating" FROM customers GROUP BY city  ;
 
 ## 81. Write a query that will produce the SNUM values of all salespeople with orders currently in the Orders table (without any repeats).
 
