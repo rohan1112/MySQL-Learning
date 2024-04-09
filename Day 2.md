@@ -247,9 +247,7 @@ located in San Jose.
 
 ## 45. COUNT the customers with ratings above San Jose’s average.
 
-    SELECT COUNT(*),cname,rating FROM customers WHERE rating>(SELECT avg(rating) FROM customers WHERE city="san jose");
-
-    SELECT * FROM(SELECT cname,rating,avg(amt)as av ,amt, row_number()over(partition by rating WHERE city="san jose") as rn FROM customers c) as t WHERE rn=1;
+    SELECT COUNT(*),cname,rating FROM customers WHERE rating>(SELECT avg(rating) FROM customers WHERE city="san jose") group by cname,rating;
 
 ## 46. Write a query that produces all pairs of salespeople with themselves as well as duplicate rows with the order reversed.
 
